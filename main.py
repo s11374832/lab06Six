@@ -24,6 +24,17 @@ def encode(password):
           pw += '2'
   return pw
 
+def decode(encoded_password):
+    # takes in the encoded password and returns the original password.
+    decoded_password = ''
+
+    for digit in encoded_password:
+        # Shift the digit down by 3 numbers
+        decoded_digit = str((int(digit) - 3))
+        decoded_password += decoded_digit
+
+    return decoded_password
+
 while True:
   print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit")
   option = int(input("Please enter an option:"))
@@ -32,6 +43,6 @@ while True:
       pw = encode(password)
       print("Your password has been encoded and stored!")
   if option == 2:
-      print("The encoded password is", pw + ',', "and the original password is", password + '.')
+      print(f"The encoded password is", {pw} + ',', "and the original password is", {decode(pw)} + '.')
   if option == 3:
       quit()
