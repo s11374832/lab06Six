@@ -1,4 +1,4 @@
-#This is Adriel
+# Christopher Webb
 def encode(password):
   pw = ''
   for value in password:
